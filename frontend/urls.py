@@ -1,9 +1,7 @@
-from django.urls import path 
-from .views import indexView, TodoDetailView
+from django.urls import re_path
+from .views import index
 
 urlpatterns = [
-    path('',indexView),
-    path('edit/<int:pk>',TodoDetailView.as_view()),
-    path('delete/<int:pk>',TodoDetailView.as_view())
+    re_path(r'.*',index),
 ]
 
