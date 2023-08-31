@@ -1,1 +1,1 @@
-# react-django-to-do-app
+# Afghan Turest Website
