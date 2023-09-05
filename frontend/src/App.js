@@ -5,6 +5,12 @@ import RightSidebar from "./components/layout/RightSidebar";
 import { Outlet } from "react-router-dom";
 import Header from "./components/layout/Header";
 import NavBar from "./components/layout/NavBar";
+import HistoricalPlaces from "./components/category/HistoricalPlaces";
+import Nature from "./components/category/Nature";
+import Parks from "./components/category/Parks";
+import Hotels from "./components/category/Hotels";
+import Restorants from "./components/category/Restorants";
+import Hospitals from "./components/category/Hospitals";
 
 const App = () => {
   return (
@@ -23,6 +29,14 @@ const App = () => {
           <LeftSidebar />
           <Grid item>
             <Outlet />
+            <Grid item>
+              <HistoricalPlaces />
+              <Nature />
+              <Parks />
+              <Hotels />
+              <Restorants />
+              <Hospitals />
+            </Grid>
           </Grid>
           <RightSidebar />
         </Grid>

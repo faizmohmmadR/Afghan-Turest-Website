@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import Cards from "./components/layout/Cards";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Slider from "./components/slider/Slider";
+import HistoricalPlaces from "./components/category/HistoricalPlaces";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,10 @@ const router = createBrowserRouter([
         element: <Slider />,
       },
     ],
+  },
+  {
+    path: "/new",
+    element: <HistoricalPlaces />,
   },
 ]);
 
