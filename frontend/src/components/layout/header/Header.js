@@ -1,4 +1,4 @@
-import { Button, Container, Grid, TextField, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import NavBar from "../navbar/NavBar";
 
@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <Container>
       <NavBar />
-      <Grid container height={"85vh"} width={"100%"} mt={12}>
+      <Grid container height={"85vh"} width={"100%"} mt={7} pt={10}>
         <Grid item lg={12} textAlign={"center"}>
           <Typography variant="h3">Welcome to Afghan Turist website</Typography>
 
@@ -20,6 +20,7 @@ const Header = () => {
             favorite places for yor next travel
           </Typography>
         </Grid>
+        {/*
         <Grid item xs={12} lg={12}>
           <Grid item xs={12} md={8} margin={"0px auto"} mb={3}>
             <Typography variant="h4">Contuct us:</Typography>
@@ -29,7 +30,8 @@ const Header = () => {
               size="large"
               fullWidth
               placeholder="Write your message"
-            ></TextField>
+              sx={{ backgroundColor: "white" }}
+            />
             <Button
               variant="outlined"
               sx={{ borderLeft: "0px", ml: "0px", borderRadius: "0px" }}
@@ -38,6 +40,7 @@ const Header = () => {
             </Button>
           </Grid>
         </Grid>
+*/}
       </Grid>
     </Container>
   );
