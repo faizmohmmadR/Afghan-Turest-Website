@@ -5,15 +5,16 @@ import Header from "./components/layout/header/Header";
 import Cards from "./components/layout/cards/Cards";
 import "./App.css";
 import Foods from "./components/layout/foods/Foods";
-import Test from "./Test/Test";
-import Register from "./components/user/Register";
+import TrendingPlaces from "./components/layout/trendingPlaces/TrendingPlaces";
+import Parks from "./components/layout/parks/Parks";
 const App = () => {
   return (
     <Box className="root">
       <Header />
       <Cards />
       <Foods />
-      <Test />
+      <TrendingPlaces />
+      <Parks />
       <Box pb={20}></Box>
     </Box>
   );
