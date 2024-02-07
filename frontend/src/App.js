@@ -14,7 +14,6 @@ const App = () => {
       <Header />
       <Cards />
       <Foods />
-
       <TrendingPlaces />
       <Parks />
       <Box pb={20}></Box>
