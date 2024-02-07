@@ -1,5 +1,6 @@
-import { Box, Container, Grid } from "@mui/material";
-import React, { useRef } from "react";
+
+import { Box, Container, Paper, Typography } from "@mui/material";
+import React, { useRef, useState } from "react";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
@@ -20,11 +21,40 @@ const foods = [
 
 const arrowStyle = {
   position: "absolute",
-  top: "45%",
+  top: "53%",
   fontSize: "3rem",
   color: "green",
   cursor: "pointer",
 };
+
+const Foods = () => {
+  const containerRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
+  const [isRightArrowVisible, setIsRightArrowVisible] = useState(true);
+
+  if (scrollPosition) {
+  }
+  const handleScroll = (way) => {
+    if (way === "right") {
+      containerRef.current.scrollBy({ left: 350, behavior: "smooth" });
+    } else if (way === "left") {
+      containerRef.current.scrollBy({ left: -350, behavior: "smooth" });
+    }
+  };
+
+  const checkArrowsVisibility = () => {
+    const container = containerRef.current;
+    setIsLeftArrowVisible(container.scrollLeft !== 0);
+    setIsRightArrowVisible(
+      container.scrollLeft + container.clientWidth < container.scrollWidth
+    );
+  };
+
+  const handleScrollEvent = () => {
+    setScrollPosition(containerRef.current.scrollLeft);
+    checkArrowsVisibility();
+  };
 const Foods = () => {
   const containerRef = useRef(null);
   function handleScrol(way) {
@@ -37,6 +67,66 @@ const Foods = () => {
     <Container
       sx={{ mt: 4, maxWidth: "1200px", width: "95%", position: "relative" }}
     >
+
+      <Paper sx={{ padding: "10px" }}>
+        <Typography variant="h4" p={4} pl={0}>
+          Browse by Provinces
+        </Typography>
+        <Box
+          gap={2}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflowX: "auto",
+            scrollbarWidth: "none",
+            scrollBehavior: "smooth",
+            "&::-webkit-scrollbar": {
+              display: "none", // Hide the scroll bar
+            },
+            // paddingLeft: "110px",
+          }}
+          ref={containerRef}
+          onScroll={handleScrollEvent}
+        >
+          {foods.map((food) => (
+            <Box key={food.id}>
+              <Box
+                component={"img"}
+                src={food.imag}
+                sx={{
+                  width: "265px",
+                  height: { xs: "200px", sm: "320px" },
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  borderRadius: "20px",
+                  boxShadow: "0px 0px 4px #333 ",
+                }}
+              />
+              <Typography variant="h6">{food.name}</Typography>
+            </Box>
+          ))}
+        </Box>
+        {isLeftArrowVisible && (
+          <ArrowCircleLeftIcon
+            style={arrowStyle}
+            sx={{ left: "0%" }}
+            onClick={() => {
+              handleScroll("left");
+            }}
+          />
+        )}
+        {isRightArrowVisible && (
+          <ArrowCircleRightIcon
+            sx={{ right: "0%" }}
+            style={arrowStyle}
+            onClick={() => {
+              handleScroll("right");
+            }}
+          />
+        )}
+      </Paper>
+=======
       <Box
         gap={3}
         sx={{
