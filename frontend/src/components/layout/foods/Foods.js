@@ -1,3 +1,4 @@
+
 import { Box, Container, Paper, Typography } from "@mui/material";
 import React, { useRef, useState } from "react";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
@@ -54,11 +55,19 @@ const Foods = () => {
     setScrollPosition(containerRef.current.scrollLeft);
     checkArrowsVisibility();
   };
+const Foods = () => {
+  const containerRef = useRef(null);
+  function handleScrol(way) {
+    way === "right"
+      ? containerRef.current.scrollBy({ left: 300, behavior: "smooth" })
+      : containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  }
 
   return (
     <Container
       sx={{ mt: 4, maxWidth: "1200px", width: "95%", position: "relative" }}
     >
+
       <Paper sx={{ padding: "10px" }}>
         <Typography variant="h4" p={4} pl={0}>
           Browse by Provinces
@@ -117,6 +126,46 @@ const Foods = () => {
           />
         )}
       </Paper>
+=======
+      <Box
+        gap={3}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflowX: "auto",
+          scrollBehavior: "smooth",
+        }}
+        ref={containerRef}
+      >
+        {foods.map((food) => (
+          <>
+            <Grid
+              key={food.id}
+              component={"img"}
+              src={food.imag}
+              sx={{
+                width: "325px",
+                height: "400px",
+              }}
+            ></Grid>
+          </>
+        ))}
+      </Box>
+      <ArrowCircleLeftIcon
+        sx={arrowStyle}
+        style={{ left: "0%" }}
+        onClick={() => {
+          handleScrol("left");
+        }}
+      />
+      <ArrowCircleRightIcon
+        sx={arrowStyle}
+        style={{ right: "0%" }}
+        onClick={() => {
+          handleScrol("right");
+        }}
+      />
     </Container>
   );
 };

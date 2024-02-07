@@ -7,12 +7,14 @@ import "./App.css";
 import Foods from "./components/layout/foods/Foods";
 import TrendingPlaces from "./components/layout/trendingPlaces/TrendingPlaces";
 import Parks from "./components/layout/parks/Parks";
+
 const App = () => {
   return (
     <Box className="root">
       <Header />
       <Cards />
       <Foods />
+
       <TrendingPlaces />
       <Parks />
       <Box pb={20}></Box>
