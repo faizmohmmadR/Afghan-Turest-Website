@@ -10,6 +10,7 @@ const imageStyle = {
 };
 const imageTitleStyle = {
   position: "absolute",
+  fontSize: { xs: "20px", sm: "30px", md: "40px" },
 };
 const TrendingPlaces = () => {
   return (
