@@ -73,7 +73,7 @@ const Register = () => {
                 <Button variant="contained">Register</Button>
               </Grid>
             </Box>
-            <Grid lg={12} textAlign={"center"} pt={4}>
+            <Grid item lg={12} textAlign={"center"} pt={4}>
               Already have account? / <Link to={"/login"}>Login</Link>{" "}
             </Grid>
           </Paper>

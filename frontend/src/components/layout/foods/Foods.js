@@ -39,9 +39,9 @@ const Foods = () => {
   }
   const handleScroll = (way) => {
     if (way === "right") {
-      containerRef.current.scrollBy({ left: 350, behavior: "smooth" });
+      containerRef.current.scrollBy({ left: 370, behavior: "smooth" });
     } else if (way === "left") {
-      containerRef.current.scrollBy({ left: -350, behavior: "smooth" });
+      containerRef.current.scrollBy({ left: -370, behavior: "smooth" });
     }
   };
 
@@ -60,17 +60,23 @@ const Foods = () => {
 
   return (
     <Container
-      sx={{ mt: 4, maxWidth: "1200px", width: "95%", position: "relative" }}
+      sx={{
+        mt: 4,
+        mb: 4,
+        maxWidth: "1200px",
+        width: "100%",
+        position: "relative",
+      }}
     >
       <Paper sx={{ padding: "10px" }}>
         <Typography variant="h4" p={4} pl={0}>
           Browse by Provinces
         </Typography>
         <Box
-          gap={2}
+          gap={3}
           sx={{
             display: "flex",
-            justifyContent: "center",
+            // justifyContent: "center",
             alignItems: "center",
             overflowX: "auto",
             scrollBehavior: "smooth",
@@ -88,12 +94,13 @@ const Foods = () => {
                 component={"img"}
                 src={food.imag}
                 sx={{
-                  width: "210px",
+                  width: { xs: "335px", md: "210px" },
                   height: { xs: "200px", sm: "250px" },
                   objectFit: "cover",
                   objectPosition: "center",
                   borderRadius: "15px",
                   boxShadow: "0px 0px 2px #333 ",
+                  ml: 2.5,
                 }}
               />
               <Typography variant="h6">{food.name}</Typography>

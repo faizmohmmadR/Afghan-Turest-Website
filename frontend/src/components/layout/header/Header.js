@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import NavBar from "../navbar/NavBar";
 
 const Header = () => {
   return (
@@ -11,11 +10,10 @@ const Header = () => {
       }}
     >
       <Container>
-        <NavBar />
         <Grid
           container
           width={"100%"}
-          mt={7}
+          // mt={7}
           pt={10}
           sx={{ height: { lg: "80vh", xl: "10vh" } }}
         >
