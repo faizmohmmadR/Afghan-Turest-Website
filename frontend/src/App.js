@@ -7,6 +7,7 @@ import "./App.css";
 import Foods from "./components/layout/foods/Foods";
 import TrendingPlaces from "./components/layout/trendingPlaces/TrendingPlaces";
 import Parks from "./components/layout/parks/Parks";
+import Hospitals from "./components/layout/hospitals/Hospitals";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Foods />
       <TrendingPlaces />
       <Parks />
+      <Hospitals />
       <Box pb={20}></Box>
     </Box>
   );

@@ -10,6 +10,7 @@ const arrowStyle = {
   top: "55%",
   fontSize: "40px",
   color: "green",
+  cursor: "pointer",
 };
 const Parks = () => {
   const containerRef = useRef(null);
