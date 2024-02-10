@@ -11,11 +11,10 @@ const Header = () => {
       }}
     >
       <Container>
-        <NavBar />
         <Grid
           container
           width={"100%"}
-          mt={7}
+          // mt={7}
           pt={10}
           sx={{ height: { lg: "80vh", xl: "10vh" } }}
         >
