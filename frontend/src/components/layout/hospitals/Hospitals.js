@@ -46,6 +46,7 @@ const Hospitals = () => {
       >
         {foods.map((f, i) => (
           <Box
+            key={i}
             sx={{
               display: "flex",
               justifyContent: "center",

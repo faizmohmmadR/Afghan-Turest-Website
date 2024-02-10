@@ -37,9 +37,11 @@ const NavBar = () => {
     setAnchorEl(false);
   };
   return (
-    <AppBar sx={{ backgroundColor: "white", color: "black" }}>
+    <AppBar
+      sx={{ backgroundColor: "white", color: "black", position: "sticky" }}
+    >
       <Container>
-        <Toolbar sx={{ position: "static" }}>
+        <Toolbar>
           <Grid
             container
             justifyContent={"space-between"}

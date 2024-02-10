@@ -62,7 +62,7 @@ const Login = () => {
               </Grid>
             </Box>
 
-            <Grid lg={12} textAlign={"center"} padding={5}>
+            <Grid item lg={12} textAlign={"center"} padding={5}>
               Does not have account yet? /{" "}
               <Link to={"/register"}>Register</Link>{" "}
             </Grid>
