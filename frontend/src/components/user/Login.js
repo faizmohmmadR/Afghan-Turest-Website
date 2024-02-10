@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 const styled = {
   pb: "40px",
   pt: "5px",
@@ -60,6 +61,11 @@ const Login = () => {
                 <Button variant="contained">Login</Button>
               </Grid>
             </Box>
+
+            <Grid lg={12} textAlign={"center"} padding={5}>
+              Does not have account yet? /{" "}
+              <Link to={"/register"}>Register</Link>{" "}
+            </Grid>
           </Paper>
         </Grid>
       </Grid>
