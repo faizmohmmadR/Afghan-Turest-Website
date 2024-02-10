@@ -9,6 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 const styled = {
   pb: "40px",
   pt: "5px",
@@ -20,7 +21,7 @@ const Register = () => {
 
   return (
     <Container>
-      <Grid container mt={10}>
+      <Grid container mt={3}>
         <Grid item xs={12} sm={8} md={6} margin={"0px auto"}>
           <Paper sx={{ padding: 4 }}>
             <Typography variant="h4" textAlign={"center"}>
@@ -72,6 +73,9 @@ const Register = () => {
                 <Button variant="contained">Register</Button>
               </Grid>
             </Box>
+            <Grid lg={12} textAlign={"center"} pt={4}>
+              Already have account? / <Link to={"/login"}>Login</Link>{" "}
+            </Grid>
           </Paper>
         </Grid>
       </Grid>
