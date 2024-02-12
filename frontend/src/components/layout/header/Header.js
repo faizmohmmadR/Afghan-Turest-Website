@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import NavBar from "../navbar/NavBar";
 
 const Header = () => {
   return (

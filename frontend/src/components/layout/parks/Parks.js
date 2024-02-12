@@ -42,7 +42,7 @@ const Parks = () => {
       sx={{
         maxWidth: "1200px",
         width: { xs: "100%", sm: "100%" },
-        mt: 3,
+        mt: 8,
         position: "sticky",
       }}
     >
