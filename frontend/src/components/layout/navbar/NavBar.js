@@ -134,7 +134,7 @@ const NavBar = () => {
               anchorEl={anchorEl}
               onClose={handleClose}
             >
-              <Box>
+              <Box onClick={handleClose}>
                 <MenuItem
                   onClick={() => {
                     navigate("/");

@@ -94,7 +94,7 @@ const Foods = () => {
                 component={"img"}
                 src={food.imag}
                 sx={{
-                  width: { xs: "335px", md: "210px" },
+                  width: { xs: "335px", md: "240px" },
                   height: { xs: "200px", sm: "250px" },
                   objectFit: "cover",
                   objectPosition: "center",
