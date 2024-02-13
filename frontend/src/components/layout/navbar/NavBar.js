@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import CloseIcon from "@mui/icons-material/Close";
 import HomeIcon from "@mui/icons-material/Home";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -38,7 +38,7 @@ const NavBar = () => {
   };
   return (
     <AppBar
-      sx={{ backgroundColor: "white", color: "black", position: "sticky" }}
+      sx={{ backgroundColor: "green", color: "white", position: "sticky" }}
     >
       <Container>
         <Toolbar>
@@ -61,7 +61,7 @@ const NavBar = () => {
                   display: { xs: "block", sm: "block", md: "none" },
                 }}
               >
-                <MenuIcon />
+                {anchorEl ? <CloseIcon /> : <MenuIcon />}
               </Box>
             </Grid>
             <Grid item lg={8} textAlign={"center"}>

@@ -1,131 +1,66 @@
-import { Box, Container, Paper, Typography } from "@mui/material";
-import React, { useRef, useState } from "react";
-import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import React from "react";
 
 const foods = [
-  { id: 1, name: "Herat", imag: "./images/places/herat-musqe.jpg" },
-  { id: 2, name: "Bameyan", imag: "./images/places/band-e-amir-national.jpg" },
-  { id: 3, name: "Herat", imag: "./images/places/akhteyaradin.png" },
+  { id: 3, name: "Herat1", imag: "./images/places/akhteyaradin.png" },
   { id: 4, name: "Mazar-e-sharif", imag: "./images/places/Blue-Mosque.jpg" },
-  { id: 5, name: "Ghor", imag: "./images/places/ghour-city.jpg" },
-  { id: 6, name: "Herat", imag: "./images/places/herat-1.jpg" },
   {
-    id: 7,
-    name: "Kabul",
-    imag: "./images/places/Kabul-Afghanistan-view_Wikimedia-Commons.jpg",
+    id: 5,
+    name: "Herat",
+    imag: "./images/places/herat.jpg",
   },
-  { id: 8, name: "Nurastan", imag: "./images/places/kabul-city.jpg" },
-  { id: 9, name: "Nurstan", imag: "./images/places/nurastan.jpg" },
-  { id: 10, name: "Ghor", imag: "./images/places/saghar1.jpg" },
-  { id: 11, name: "Ghor", imag: "./images/places/saghar4.jpg" },
+
+  {
+    id: 6,
+    name: "Ghor",
+    imag: "./images/places/saghar.jpg",
+  },
 ];
-
-const arrowStyle = {
-  position: "absolute",
-  top: "53%",
-  fontSize: "3rem",
-  color: "green",
-  cursor: "pointer",
-};
-
 const Foods = () => {
-  const containerRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isLeftArrowVisible, setIsLeftArrowVisible] = useState(false);
-  const [isRightArrowVisible, setIsRightArrowVisible] = useState(true);
-
-  if (scrollPosition) {
-  }
-  const handleScroll = (way) => {
-    if (way === "right") {
-      containerRef.current.scrollBy({ left: 370, behavior: "smooth" });
-    } else if (way === "left") {
-      containerRef.current.scrollBy({ left: -370, behavior: "smooth" });
-    }
-  };
-
-  const checkArrowsVisibility = () => {
-    const container = containerRef.current;
-    setIsLeftArrowVisible(container.scrollLeft !== 0);
-    setIsRightArrowVisible(
-      container.scrollLeft + container.clientWidth < container.scrollWidth
-    );
-  };
-
-  const handleScrollEvent = () => {
-    setScrollPosition(containerRef.current.scrollLeft);
-    checkArrowsVisibility();
-  };
-
   return (
-    <Container
-      sx={{
-        mt: 4,
-        mb: 4,
-        maxWidth: "1200px",
-        width: "100%",
-        position: "relative",
-      }}
-    >
-      <Paper sx={{ padding: "10px" }}>
-        <Typography variant="h4" p={4} pl={0}>
-          Browse by Provinces
-        </Typography>
-        <Box
-          gap={3}
-          sx={{
-            display: "flex",
-            // justifyContent: "center",
-            alignItems: "center",
-            overflowX: "auto",
-            scrollBehavior: "smooth",
-            "&::-webkit-scrollbar": {
-              display: "none", // Hide the scroll bar
-            },
-            // paddingLeft: "110px",
-          }}
-          ref={containerRef}
-          onScroll={handleScrollEvent}
-        >
-          {foods.map((food) => (
-            <Box key={food.id}>
+    <Container sx={{ mt: 5, mb: 15 }}>
+      <Typography variant="h4" margin={"30px 0px"}>
+        Most Populer Foods
+      </Typography>
+      <Grid container gap={8} justifyContent={"space-around"}>
+        {foods.map((f, i) => (
+          <Grid key={i} lg={2.5} sm={4} md={3} xs={12} item>
+            <Box
+              sx={{
+                width: { xs: "100%", sm: "265px", md: "280px" },
+                height: "200px",
+                border: "1px solid green",
+                perspective: "800px",
+                mt: 5,
+              }}
+            >
+              <Typography
+                variant="h5"
+                textAlign={"center"}
+                bgcolor={"green"}
+                color={"white"}
+                padding={"5px"}
+              >
+                {f.name}
+              </Typography>
               <Box
-                component={"img"}
-                src={food.imag}
                 sx={{
-                  width: { xs: "335px", md: "240px" },
-                  height: { xs: "200px", sm: "250px" },
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  borderRadius: "15px",
-                  boxShadow: "0px 0px 2px #333 ",
-                  ml: 2.5,
+                  width: { xs: "100%", sm: "265px", md: "280px" },
+                  height: "200px",
+                  boxShadow: "0px 0px 10px #333",
+                  transform: "rotateX(20deg)",
+                  transition: "all 1s ease",
+                  ":hover": {
+                    transform: "rotateX(0deg)",
+                  },
                 }}
-              />
-              <Typography variant="h6">{food.name}</Typography>
+                component={"img"}
+                src={f.imag}
+              ></Box>
             </Box>
-          ))}
-        </Box>
-        {isLeftArrowVisible && (
-          <ArrowCircleLeftIcon
-            style={arrowStyle}
-            sx={{ left: "0%" }}
-            onClick={() => {
-              handleScroll("left");
-            }}
-          />
-        )}
-        {isRightArrowVisible && (
-          <ArrowCircleRightIcon
-            sx={{ right: "0%" }}
-            style={arrowStyle}
-            onClick={() => {
-              handleScroll("right");
-            }}
-          />
-        )}
-      </Paper>
+          </Grid>
+        ))}
+      </Grid>
     </Container>
   );
 };

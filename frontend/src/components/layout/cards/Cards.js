@@ -64,7 +64,7 @@ const Cards = () => {
           <Grid item lg={12} textAlign={"center"} mb={5}>
             <Typography variant="h3">Most visited Place</Typography>
           </Grid>
-          <Grid container justifyContent={"center"} gap={4}>
+          <Grid container justifyContent={"space-around"} gap={1}>
             {places.map((place, index) => (
               <Grid item key={index} xs={12} sm={4} md={3} lg={3}>
                 <Card sx={{ boxShadow: "0px 0px 10px #333" }}>
