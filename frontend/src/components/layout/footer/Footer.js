@@ -66,7 +66,7 @@ const Footer = () => {
                 <GitHubIcon />
               </a>
 
-              <a
+              <a   
                 href="https://www.facebook.com/profile.php?id=100015165183602&mibextid=kFxxJD"
                 target="_blank"
                 rel="noreferrer"
