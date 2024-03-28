@@ -1,32 +1,43 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import NavBar from "../navbar/NavBar";
 
+const imageStyle = {};
 const Header = () => {
   return (
     <Box
       sx={{
         backgroundColor: "green",
         color: "white",
+        borderBottomRightRadius: "20%",
+        borderBottomLeftRadius: "20%",
       }}
     >
       <Container>
-        <NavBar />
         <Grid
           container
           width={"100%"}
-          mt={7}
+          // mt={7}
           pt={10}
-          sx={{ height: { lg: "80vh", xl: "10vh" } }}
+          sx={{ height: "100svh" }}
+          // sx={{ height: { lg: "80vh", xl: "10vh" } }}
         >
-          <Grid item lg={12} textAlign={"center"}>
-            <Typography variant="h3">
+          <Grid item lg={6}>
+            <Typography
+              variant="h3"
+              sx={{
+                fontSize: {
+                  xs: "25px",
+                  sm: "45px",
+                  md: "50px",
+                  fontWeight: "bold",
+                },
+              }}
+            >
               Welcome to Afghan Turist website
             </Typography>
 
             <Typography
               sx={{ width: { xs: "100%", sm: "60%" } }}
-              margin={"0px auto"}
               variant="h5"
               mt={4}
             >
@@ -34,27 +45,51 @@ const Header = () => {
               favorite places for yor next travel
             </Typography>
           </Grid>
-          {/*
-        <Grid item xs={12} lg={12}>
-          <Grid item xs={12} md={8} margin={"0px auto"} mb={3}>
-            <Typography variant="h4">Contuct us:</Typography>
-          </Grid>
-          <Grid item xs={12} md={8} display={"flex"} margin={"0px auto"}>
-            <TextField
-              size="large"
-              fullWidth
-              placeholder="Write your message"
-              sx={{ backgroundColor: "white" }}
-            />
-            <Button
-              variant="outlined"
-              sx={{ borderLeft: "0px", ml: "0px", borderRadius: "0px" }}
+
+          <Grid item xs={12} lg={6} position={"relative"}>
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                height: "350px",
+                perspective: "800px",
+                position: "relative",
+                margin: { xs: "20px auto" },
+                backgroundImage:
+                  'url("./images/places/band-e-amir-national.jpg")',
+                // bgcolor: "green",
+              }}
             >
-              Sumbit
-            </Button>
+              <Box
+                sx={{
+                  width: { xs: "200px", sm: "300px" },
+                  height: "350px",
+                  transform: "rotateY(-25deg)",
+                  transition: "all 1s ease",
+                  ":hover": { transform: "rotateY(0deg)" },
+                  borderRadius: "10px",
+                  boxShadow: "0px 0px 20px #333",
+                }}
+                component={"img"}
+                src="./images/places/band-e-amir-national.jpg"
+              ></Box>
+              <Box
+                sx={{
+                  width: { xs: "200px", sm: "300px" },
+                  height: "350px",
+                  transform: "rotateY(25deg)",
+                  position: "absolute",
+                  left: "55%",
+                  transition: "all 1s ease",
+                  ":hover": { transform: "rotateY(0deg)" },
+                  borderRadius: "10px",
+                  boxShadow: "0px 0px 20px #333",
+                }}
+                component={"img"}
+                src="./images/places/herat-musqe.jpg"
+              ></Box>
+            </Box>
           </Grid>
-        </Grid>
-*/}
         </Grid>
       </Container>
     </Box>
